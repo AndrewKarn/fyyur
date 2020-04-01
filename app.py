@@ -23,7 +23,6 @@ app = Flask(__name__)
 moment = Moment(app)
 app.config.from_object('config')
 db = SQLAlchemy(app)
-cache = Cache()
 
 # TODO: connect to a local postgresql database
 # Done - D.K
