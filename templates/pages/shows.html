@@ -11,6 +11,7 @@
             <p>playing at</p>
             <h5><a href="/venues/{{ show.venue_id }}">{{ show.venue_name }}</a></h5>
         </div>
+        <form method="post" action="/shows/delete/{{show.id}}"><input type="submit" value="Delete Show" class="btn btn-secondary btn-sm btn-block"></form>
     </div>
     {% endfor %}
 </div>
