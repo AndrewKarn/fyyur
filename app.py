@@ -163,7 +163,7 @@ def getUpcomingAndPastShows(modelType, entity_id, entiy_data):
     for d in data:
         # building row based on the entity that's requested
         if (modelType == 'venue'):
-            artist = entiy_data
+            artist = db.session.query(Artist).filter(Artist.id == d.artist_id)
             row = {
                 "artist_id": d.artist_id,
                 "artist_name": artist.name,
@@ -171,7 +171,7 @@ def getUpcomingAndPastShows(modelType, entity_id, entiy_data):
                 "start_time": d.start_time.strftime('%m/%d/%Y')
             }
         else:
-            venue = entiy_data
+            venue = db.session.query(Venue).filter(Venue.id == d.venue_id)
             row = {
                 "venue_id": d.venue_id,
                 "venue_name": venue.name,
